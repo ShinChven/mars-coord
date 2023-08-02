@@ -1,4 +1,4 @@
-import { Coordinate, convertCoordinate } from './../src/index';
+import { Coordinate, convertCoordinate } from '../src/index';
 let testCoordinate: Coordinate = [110.030774, 36.815854];
 
 // WGS84
