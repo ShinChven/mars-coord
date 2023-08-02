@@ -1,13 +1,31 @@
 {
   "name": "mars-coord",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "",
   "main": "lib/index.js",
   "scripts": {
     "compile": "shx rm -rf lib && tsc",
     "prepublish": "npm run compile"
   },
-  "keywords": [],
+  "keywords": [
+    "coordinates",
+    "conversion",
+    "geolocation",
+    "mapping",
+    "WGS84",
+    "GCJ02",
+    "BD09",
+    "CGCS2000",
+    "geospatial",
+    "gis",
+    "geocoding",
+    "longitude",
+    "latitude",
+    "maps",
+    "Amap",
+    "Baidu Maps",
+    "Tencent Maps"
+  ],
   "author": {
     "url": "https://github.com/ShinChven",
     "name": "ShinChven",
