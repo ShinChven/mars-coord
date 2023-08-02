@@ -34,6 +34,43 @@ console.log('BAIDU:', result.BAIDU); // Coordinate system used by Baidu Maps
 console.log('CGCS2000:', result.CGCS2000);
 ```
 
+## Usage with JavaScript Location API
+
+```typescript
+import { convertCoordinate } from 'mars-coord';
+
+function getCurrentLocation() {
+  return new Promise((resolve, reject) => {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(resolve, reject);
+    } else {
+      reject(new Error('Geolocation is not supported by this browser.'));
+    }
+  });
+}
+
+async function getConvertedCoordinates() {
+  try {
+    const position = await getCurrentLocation();
+    const myCoordinate = [position.coords.longitude, position.coords.latitude];
+    const result = convertCoordinate(myCoordinate, 'WGS84');
+
+    console.log('WGS84:', result.WGS84);
+    console.log('GCJ02:', result.GCJ02);
+    console.log('AMAP:', result.AMAP); // Coordinate system used by Amap Maps
+    console.log('QQ:', result.QQ); // Coordinate system used by QQ Maps
+    console.log('BD09:', result.BD09);
+    console.log('BAIDU:', result.BAIDU); // Coordinate system used by Baidu Maps
+    console.log('CGCS2000:', result.CGCS2000);
+  } catch (error) {
+    console.error('An error occurred:', error);
+  }
+}
+
+// Call the function to execute the code
+getConvertedCoordinates();
+```
+
 ## Coordinate Picker
 
 Mostly in Chinese.

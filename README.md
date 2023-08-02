@@ -35,6 +35,50 @@ console.log('BAIDU:', result.BAIDU); // 百度地图使用的坐标系
 console.log('CGCS2000:', result.CGCS2000);
 ```
 
+## 在前端中使用
+
+```typescript
+import { convertCoordinate } from 'mars-coord';
+
+// 定义一个函数，获取当前位置，并返回一个Promise
+function getCurrentLocation() {
+  return new Promise((resolve, reject) => {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(resolve, reject);
+    } else {
+      reject(new Error('此浏览器不支持地理位置。'));
+    }
+  });
+}
+
+// 定义一个异步函数，获取并转换坐标
+async function getConvertedCoordinates() {
+  try {
+    // 等待获取当前位置
+    const position = await getCurrentLocation();
+    const myCoordinate = [position.coords.longitude, position.coords.latitude];
+
+    // 使用mars-coord将坐标转换为其他坐标系
+    const result = convertCoordinate(myCoordinate, 'WGS84');
+
+    console.log('WGS84:', result.WGS84); // 输出WGS84坐标
+    console.log('GCJ02:', result.GCJ02); // 输出GCJ02坐标
+    console.log('AMAP:', result.AMAP); // 输出高德地图使用的坐标
+    console.log('QQ:', result.QQ); // 输出QQ地图使用的坐标
+    console.log('BD09:', result.BD09); // 输出BD09坐标
+    console.log('BAIDU:', result.BAIDU); // 输出百度地图使用的坐标
+    console.log('CGCS2000:', result.CGCS2000); // 输出CGCS2000坐标
+  } catch (error) {
+    // 处理任何错误
+    console.error('发生错误：', error);
+  }
+}
+
+// 调用函数执行代码
+getConvertedCoordinates();
+
+```
+
 ## 坐标拾取器
 
 - [高德地图坐标拾取器](https://lbs.amap.com/tools/picker)
