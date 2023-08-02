@@ -1,6 +1,7 @@
 # Mars Coord
 
-[English doc](./README_EN.md)
+[![English README](https://img.shields.io/badge/README-English-green)](./README_EN.md) [![npm version](https://img.shields.io/npm/v/mars-coord.svg?style=flat)](https://www.npmjs.com/package/mars-coord) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 
 这是一个用于转换火星坐标系的工具库。它使用 TypeScript 编写。
 

@@ -1,6 +1,6 @@
 # Mars Coord
 
-[中文](./README.md)
+[![中文 README](https://img.shields.io/badge/README-English-green)](./README.md) [![npm version](https://img.shields.io/npm/v/mars-coord.svg?style=flat)](https://www.npmjs.com/package/mars-coord) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 This is a node library for converting China's Mars coordinates, written in TypeScript.
 
@@ -28,7 +28,7 @@ const result = convertCoordinate(myCoordinate, 'WGS84');
 console.log('WGS84:', result.WGS84);
 console.log('GCJ02:', result.GCJ02);
 console.log('AMAP:', result.AMAP); // Coordinate system used by Amap Maps
-console.log('QQ:', result.QQ); // Coordinate system used by QQ Maps
+console.log('QQ:', result.QQ); // Coordinate system used by  Tencent Maps
 console.log('BD09:', result.BD09);
 console.log('BAIDU:', result.BAIDU); // Coordinate system used by Baidu Maps
 console.log('CGCS2000:', result.CGCS2000);
