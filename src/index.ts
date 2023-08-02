@@ -178,6 +178,21 @@ export interface CoordinatesObject {
   CGCS2000: Coordinate;
 }
 
+export type CoordinateObject = {
+  longitude: number;
+  latitude: number;
+  type?: CoordinateType;
+}
+
+export const coordinateToObject = (coord: Coordinate, type?: CoordinateType): CoordinateObject => {
+  let [longitude, latitude] = coord;
+  return {
+    longitude,
+    latitude,
+    type: type,
+  };
+}
+
 
 /**
  * Convert coordinates from one type to all
@@ -229,6 +244,6 @@ export function convertCoordinate(coord: Coordinate, coordType: CoordinateType):
     QQ: GCJ02,
     BD09,
     BAIDU: BD09,
-    CGCS2000
+    CGCS2000,
   };
 }
